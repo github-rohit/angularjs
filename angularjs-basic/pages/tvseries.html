@@ -1,0 +1,32 @@
+<div ng-if="tv_series_api_data.series">
+	<div ng-if="tv_series_api_data.series.error">
+		<search-error></search-error>
+	</div>
+	<div ng-if="!tv_series_api_data.series.error">
+		<div ng-if="tv_series_api_data.series.norecord">
+			<no-record series="series"></no-record>
+		</div>
+		<div ng-if="!tv_series_api_data.series.norecord">
+			<div class="page-header-top">
+				<div class="container">
+					<h1><a href="#/"><i class="glyphicon glyphicon-circle-arrow-left"></i></a>{{ series }} <br> <span class="small">TV Series {{tv_series_api_data.series.year}}</span></h1>
+				</div>	
+			</div>
+			 <div class="container">
+				 <div class="row">
+					<div class="col-md-4">
+						<tab-nav-pills></tab-nav-pills>
+					</div>
+					<div class="col-md-8">
+						<div class="tab-content">
+							<div class="tab-pane" ng-repeat="(season, episodes) in tv_series_api_data.series.episodes"  ng-class="{active: activeTab == {{season}}}">
+								<series-season season-episodes="episodes"></series-season>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>	
+		</div>
+	</div>
+</div>
+

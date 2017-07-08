@@ -1,0 +1,8 @@
+<div class="angular-js-episodes-list">   
+	<div class="row angular-js-episodes-heading">
+		Total <span class="number">{{seasonEpisodes.length - 1}}</span> episodes
+	</div>
+	<div ng-repeat="episode in seasonEpisodes" ng-if="episode.name">
+		<series-episode season-episode-number="{{episode.number}}" season-episode-name="{{episode.name}}"></series-episode> 
+	</div>
+</div>

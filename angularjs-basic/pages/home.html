@@ -1,0 +1,12 @@
+<div class="container angular-js-search-container">
+	<form ng-submit="submit()">
+		<h1 class="search-page-heading">Search tv series</h1>
+		<div class="form-group">
+				<input type="search" class="search-control" ng-blur="validateSeriesName=true" autofocus ng-model="series" placeholder="Series Name"/>
+		</div>
+		<p ng-if="!series && validateSeriesName" class="text-danger">Please enter serial name.</p>
+		<input type="submit" class="search-btn" ng-disabled="!series" value="Search">
+	</form>
+</div>
+
+<!--//href="#/tvseries"-->

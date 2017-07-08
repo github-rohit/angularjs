@@ -1,0 +1,4 @@
+<ul class="list-unstyled angular-js-season-list">
+  <li ng-repeat="(season, episodes) in tv_series_api_data.series.episodes" ng-class="{active: activeTab == {{season}} }">
+      <a ng-click="setActiveTab(season)" href="javascrip:void(0)">Season {{season}}</a></li>
+</ul>
